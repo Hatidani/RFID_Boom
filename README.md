@@ -52,7 +52,7 @@ The project was built and tested in distinct, modular phases to ensure reliabili
 
 ## 🔌 Circuit Diagram
 
-![RFID BOOM System Circuit Diagram](RFID_Boom/Design/circuit_image.png)
+![RFID BOOM System Circuit Diagram]([RFID_Boom/Design/circuit_image.png](https://github.com/Hatidani/RFID_Boom/blob/4537723296cfea3ef2a522f13da454cfc8f91dc4/Design/circuit_image.png))
 
 *Figure 1: Schematic showing the connections between the Microcontroller, MFRC522, Servo, LCD*
 
