@@ -62,4 +62,4 @@ The project was built and tested in distinct, modular phases to ensure reliabili
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/Hatidani/RFID_Toll.git](https://github.com/Hatidani/RFID_Toll.git)
+   git clone [https://github.com/Hatidani/RFID_Toll.git](https://github.com/Hatidani/RFID_Boom.git)
