@@ -43,7 +43,7 @@ The project was built and tested in distinct, modular phases to ensure reliabili
 2. Created a function to map the servo to 90 degrees (open gate) when an authorized tag is read.
 3. Added a delay before automatically returning the servo to 0 degrees (closed gate) to allow the vehicle to pass.
 
-### Part 4: Main Logic & Balance Management
+### Part 4: Main Logic
 1. Integrated all modules into a single control loop.
 2. Created a simulated "database" in the code (variables/arrays) holding the Authorised UID number.
 3. Programmed the boom logic: If a card is scanned, UID number is obtained, and checked if it matches numbers within 'database', if so boom is opened, if not, boom is left closed.
