@@ -64,4 +64,4 @@ The project was built and tested in distinct, modular phases to ensure reliabili
    ```bash
    git clone [https://github.com/Hatidani/RFID_Toll.git](https://github.com/Hatidani/RFID_Boom.git)
 ## Demonstration Video
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7473825145732788225?collapsed=1" height="542" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7473825145732788225?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
