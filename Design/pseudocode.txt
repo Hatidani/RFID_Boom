@@ -1,0 +1,89 @@
+// PSEUDOCODE: RFID Access Control System with Servo Gate
+
+// ===== DECLARATIONS =====
+INCLUDE Servo library
+INCLUDE SPI library
+INCLUDE MFRC522 library
+INCLUDE Wire library
+INCLUDE LiquidCrystal_I2C library
+
+DEFINE RST_PIN = 9
+DEFINE SS_PIN = 10
+DEFINE NEW_UID = {0xDE, 0xAD, 0xBE, 0xEF}
+
+INITIALIZE MFRC522 instance with SS_PIN and RST_PIN
+INITIALIZE LCD instance (address 0x27, 16 columns, 2 rows)
+INITIALIZE MIFARE_Key key
+INITIALIZE Servo myservo
+DECLARE pos = 0
+
+// ===== SETUP FUNCTION =====
+PROCEDURE setup()
+    START serial communication at 9600 baud
+    WAIT until serial port is opened
+    START SPI communication
+    INITIALIZE MFRC522 reader
+    SET pinMode for red LED (OUTPUT)
+    SET pinMode for green LED (OUTPUT)
+    ATTACH servo to pin 8
+    INITIALIZE LCD
+    TURN ON LCD backlight
+END PROCEDURE
+
+// ===== MAIN LOOP =====
+PROCEDURE loop()
+    // Check for new RFID card
+    IF no new card present OR unable to read card serial THEN
+        WAIT 50ms
+        EXIT procedure
+    END IF
+    
+    // Display scanning message
+    SET LCD cursor to position (1, 0)
+    PRINT "Scanning" on LCD
+    WAIT 1500ms
+    CLEAR LCD
+    
+    // Debug output - display UID
+    PRINT "Card UID:" to serial monitor
+    FOR each byte i in card UID size
+        PRINT UID byte value in hexadecimal format
+    END FOR
+    
+    // Verify if card matches authorized UID
+    IF UID[0] == 0x6A AND UID[1] == 0x95 AND UID[2] == 0x56 AND UID[3] == 0x12 THEN
+        
+        // Authorized card detected
+        SET LCD cursor to position (1, 0)
+        PRINT "Opening Gate" on LCD
+        WAIT 2000ms
+        CLEAR LCD
+        
+        // Open the gate (servo moves from 0° to 90°)
+        FOR pos FROM 0 TO 90 STEP 1
+            WRITE pos to servo
+            WAIT 15ms (allows servo to reach position)
+        END FOR
+        
+        WAIT 1000ms (gate stays open)
+        
+        // Close the gate (servo moves from 90° back to 0°)
+        FOR pos FROM 90 DOWN TO 0 STEP -1
+            WRITE pos to servo
+            WAIT 15ms (allows servo to reach position)
+        END FOR
+        
+    ELSE
+        // Unauthorized card detected
+        SET LCD cursor to position (1, 0)
+        PRINT "Unknown Card/tag detected" on LCD
+        SET LCD cursor to position (2, 1)
+        PRINT "Input invalid" on LCD
+        WAIT 1500ms
+        CLEAR LCD
+    END IF
+    
+    // Halt the RFID card
+    HALT PICC (stop communication with card)
+    WAIT 2000ms
+END PROCEDURE
