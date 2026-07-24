@@ -12,10 +12,10 @@ An automated Boom system using an RFID module and a microcontroller. This projec
 
 ---
 
-## 🔍 Overview
+## Overview
 This project was designed to demonstrate seamless vehicle access control. When a vehicle approaches, the driver scans their RFID card/tag. The system reads the Unique ID (UID), and either grants access (rotating a servo motor to open the gate) or denies it, displaying real-time feedback on an LCD.
 
-## 🛠️ Components Used
+## Components Used
 *   **Microcontroller:** Arduino Uno
 *   **RFID Reader:** MFRC522 Module
 *   **Gate Actuator:** SG90 Micro Servo Motor
@@ -24,7 +24,7 @@ This project was designed to demonstrate seamless vehicle access control. When a
 
 ---
 
-## ⚙️ System Architecture & Steps
+## System Architecture & Steps
 
 The project was built and tested in distinct, modular phases to ensure reliability and create a reference for future implementations of the project into other systems
 
@@ -49,7 +49,7 @@ The project was built and tested in distinct, modular phases to ensure reliabili
 
 ---
 
-## 🔌 Circuit Diagram
+## Circuit Diagram
 
 ![RFID_Boom/Design/circuit_image.png](https://github.com/Hatidani/RFID_Boom/blob/4537723296cfea3ef2a522f13da454cfc8f91dc4/Design/circuit_image.png)
 
@@ -57,7 +57,7 @@ The project was built and tested in distinct, modular phases to ensure reliabili
 
 ---
 
-## 💻 Software Setup
+## Software Setup
 
 1. Clone this repository:
    ```bash
