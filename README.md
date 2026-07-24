@@ -8,7 +8,6 @@ An automated Boom system using an RFID module and a microcontroller. This projec
 - [System Architecture & Steps](#system-architecture--steps)
 - [Circuit Diagram](#circuit-diagram)
 - [Software Setup](#software-setup)
-- [System Operation](#system-operation)
 - [Demonstration Video](#demonstration-video)
 
 ---
