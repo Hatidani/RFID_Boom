@@ -46,7 +46,7 @@ void loop() {
   } 
   Serial.println();
 
-  // Check if this is your specific card
+  // Check if this is your specific card, hardcoded for sake of demonstration
   if (mfrc522.uid.uidByte[0] == 0x6A && 
       mfrc522.uid.uidByte[1] == 0x95 && 
       mfrc522.uid.uidByte[2] == 0x56 && 
